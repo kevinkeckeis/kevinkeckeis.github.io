@@ -11,7 +11,7 @@ body {
   color: #001524;
   font-family: 'Source Sans Pro', sans-serif;
 
-  padding: 20px;
+  padding: 10px;
   font-size: 14px;
 }
 
@@ -30,7 +30,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  padding: 10px;
+  padding: 5px;
   font-weight: 800;
 }
 
@@ -151,7 +151,7 @@ footer {
 
 #contact li {
   display: inline-block;
-  padding: 0px 20px;
+  padding: 0px 10px;
 }
 
 #contact a {
@@ -187,15 +187,24 @@ footer {
 @media only screen and (min-width: 600px) {
   body {
     font-size: 16px;
+    padding: 15px;
   }
   img {
     width: 60%;
+  }
+
+  nav li {
+    padding: 10px;
+  }
+  #contact li {
+    padding: 0px 20px;
   }
 }
 
 @media only screen and (min-width: 980px) {
   body {
     font-size: 20px;
+    padding: 20px;
   }
 
   article {
