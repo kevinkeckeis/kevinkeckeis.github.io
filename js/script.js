@@ -26,6 +26,4 @@ let opacityLowOff = function (e) {
 items.forEach((item) => {
   item.addEventListener('mouseenter', opacityLowOn);
   item.addEventListener('mouseleave', opacityLowOff);
-  item.addEventListener('focus', opacityLowOn);
-  item.addEventListener('blur', opacityLowOff);
 });

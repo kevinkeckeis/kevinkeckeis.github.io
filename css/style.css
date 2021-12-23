@@ -40,8 +40,7 @@ nav a {
   font-size: 1.2rem;
 }
 
-nav a:hover,
-nav a:focus {
+nav a:hover {
   color: #ff7d00;
 }
 
@@ -111,15 +110,12 @@ footer {
   color: #78290f;
 }
 
-.itemList a:hover,
-.itemList a:focus {
+.itemList a:hover {
   border: 1px solid #ff7d00;
 }
 
 .itemList a:hover,
-.itemList a:focus,
-.itemList a:hover .bi::before,
-.itemList a:focus .bi::before {
+.itemList a:hover .bi::before {
   transition: ease 0.5s;
   color: #ff7d00;
 }
