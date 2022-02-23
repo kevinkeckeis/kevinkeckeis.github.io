@@ -4,95 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Kevin Keckeis</title>
+
+    <script src="https://kit.fontawesome.com/df86504a90.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <main>
-      <article>
-        <h1>Kevin Keckeis</h1>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-
-        <section id="about">
-          <h2>About me</h2>
+    <div class="container">
+      <header>
+        <img src="images/kevin.jpg" alt="portrait" />
+      </header>
+      <main>
+        <article>
+          <h1>Kevin Keckeis</h1>
           <p>
-            Hi! I am Kevin Keckeis. I study philosophy at University of Vienna but can't help me to
-            keep my fingers from computers and their programming languages. That's why I invest some
-            time learning them. So, when I don't study Plato, Descartes and Kant, I continue my web
-            development adventure, which I want to showcase here.
+            Opus in progressu. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore,
+            voluptas? Temporibus, quasi nobis. Debitis deserunt quod vero repellendus culpa ab sunt
+            ipsa odit porro. Optio sunt sint quod ipsam. Blanditiis.
           </p>
-          <p>Also love to spent time in nature climbing with friends.</p>
-        </section>
-        <figure>
-          <img src="images/me.jpg" alt="Kevin" />
-          <figcaption>Me belaying a friend. (2021)</figcaption>
-        </figure>
-
-        <section id="work">
-          <h2 class="center">Work</h2>
-          <ul class="itemList">
-            <a class="item" href="#">
-              <li>
-                <i class="bi bi-kanban"></i>
-                <div class="itemTitle">Projects</div>
-              </li>
-            </a>
-            <a class="item" href="#">
-              <li>
-                <i class="bi bi-pencil-square"></i>
-                <div class="itemTitle">Blog</div>
-              </li>
-            </a>
-            <a class="item" href="https://labs.kevinkeckeis.at">
-              <li>
-                <i class="bi bi-columns-gap"></i>
-                <div class="itemTitle">Lab</div>
-              </li>
-            </a>
-          </ul>
-        </section>
-        <section id="skills">
-          <h2>Skills</h2>
-          <p>I learned different kind of skills through plattforms like <em>codecademy.com</em>.</p>
-          <div class="skillsBox">
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JS</li>
-              <li>Github</li>
-            </ul>
-          </div>
-        </section>
-        <section id="contact">
-          <h2>Contact</h2>
-          <p>Write me</p>
-          <ul>
-            <li>
-              <a href="https://github.com/kevinkeckeis"><i class="bi bi-github"></i> Github</a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/kevinkeckeis"
-                ><i class="bi bi-facebook"></i>Facebook</a
-              >
-            </li>
-            <li>
-              <a href="https://www.instagram.com/kevinkeckeis"
-                ><i class="bi bi-instagram"></i>Instagram</a
-              >
-            </li>
-          </ul>
-        </section>
-      </article>
-    </main>
-    <footer>Made with ♥</footer>
+        </article>
+      </main>
+      <footer>
+        <div class="row">
+          <a
+            href="#"
+            id="message"
+            data-name="web"
+            data-domain="kevinkeckeis"
+            data-tld="at"
+            onclick="message(this.dataset.name, this.dataset.domain, this.dataset.tld)"
+            ><i class="fa-solid fa-at"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/kevinkeckeis">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/kevinkeckeis">
+            <i class="fa-brands fa-github-alt"></i>
+          </a>
+          <a href="https://www.facebook.com/kevinkeckeis">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

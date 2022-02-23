@@ -1,29 +1,4 @@
-let items = document.querySelectorAll('.item');
-
-let opacityLowOn = function (e) {
-  items.forEach((x) => {
-    if (e.srcElement !== x) {
-      x.classList.add('opacityLow');
-      x.classList.remove('opacityFull');
-    } else {
-      x.classList.add('opacityFull');
-      x.classList.remove('opacityLow');
-    }
-  });
+let messageElement = document.getElementById('message');
+let message = (name, domain, tld) => {
+  window.location.href = 'mailto:' + name + '@' + domain + '.' + tld;
 };
-
-let opacityLowOff = function (e) {
-  items.forEach((x) => {
-    if (e.srcElement !== x) {
-      x.classList.add('opacityFull');
-      x.classList.remove('opacityLow');
-    } else {
-      x.classList.add('opacityFull');
-    }
-  });
-};
-
-items.forEach((item) => {
-  item.addEventListener('mouseenter', opacityLowOn);
-  item.addEventListener('mouseleave', opacityLowOff);
-});
