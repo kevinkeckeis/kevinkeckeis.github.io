@@ -1,136 +1,161 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap');
 
+/* Set general rules   */
+:root {
+  /* https://colorhunt.co/palette/261c2c3e2c415c527f6e85b2 */
+  --bg-color: #ffffff;
+  --text-color: #191a19;
+  --text-color-accent1: #3e2c41;
+  --text-color-accent2: #5c527f;
+  --text-color-accent3: #6e85b2;
+}
+
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.5;
-  font-size: 1.2rem;
-}
-
-p {
-  font-weight: 300;
-}
-
-header {
-  grid-area: header;
-}
-
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-
-  animation: moveAndFadeIn 1s linear 0.5s both;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  overflow: hidden;
 }
 
 .container {
   display: grid;
-  grid-template-rows: minmax(0, 2fr) 1fr 1fr;
   grid-template-areas:
     'header'
     'main'
     'footer';
 
-  justify-items: center;
   height: 100vh;
-  max-width: 980px;
-  padding: 50px;
-  box-sizing: border-box;
-  margin: 0 auto;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+}
+
+/* Header */
+header {
+  grid-area: header;
+  position: absolute;
+  /* background-color: rgba(200, 200, 200, 0.5); */
+  width: 100%;
+  top: 0px;
+}
+
+header nav {
+  padding: 10px;
+}
+
+header ol {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+header li {
+  display: inline;
+}
+
+header a {
+  margin: 10px;
+  padding: 10px;
+}
+
+a {
+  color: var(--text-color-accent3);
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--text-color-accent2);
+}
+
+a:hover {
+  color: var(--text-color-accent2);
 }
 
 main {
   grid-area: main;
-  align-self: start;
-  max-width: 700px;
-  margin: 0px 20px;
-
+  padding: 0px 30px;
   animation: moveAndFadeIn 1s linear 0.6s both;
 }
 
 footer {
   grid-area: footer;
-  margin: 30px;
-  width: 100%;
-
   animation: moveAndFadeIn 1s linear 0.75s both;
 }
 
-.row {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-}
-
 h1 {
-  margin: 20px 0px;
+  padding-top: 20px;
   font-size: 2rem;
-  color: #1f2e47;
-}
-
-.row a {
-  padding: 20px;
-  color: #1f2e47;
-}
-
-.row a:hover {
-  color: #f3c969;
-  transition: 0.3s;
-}
-h1 {
+  color: var(--text-color-accent1);
   text-align: center;
 }
 
-@keyframes moveAndFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-6px);
-  }
-  40% {
-    opacity: 0.8;
-    transform: translateX(-3px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
+h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
 }
 
-@media (max-width: 699px) {
+.about,
+.technologies,
+.projects {
+  height: 100vh;
+  scroll-snap-align: center;
+  padding-top: 4rem;
 }
 
-@media (min-width: 700px) {
-  .container {
-    grid-template-columns: minmax(0, 1fr) 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      'header main'
-      'header footer';
+/* Article Contact */
+.contact {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
 
-    padding: 20px;
-  }
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  header {
-    align-self: center;
-  }
+.about__title {
+  padding-top: 5px;
+  text-align: center;
+}
 
-  main {
-    align-self: end;
-  }
+.about__description {
+  text-align: left;
+  padding-top: 20px;
+}
 
-  main p {
-    border-left: 1px solid #e3e8f3;
-    border-right: 1px solid #e3e8f3;
-    padding: 0px 10px;
-  }
+.about__contact {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.about__contact a {
+  padding: 20px;
+  font-size: 1.5rem;
+  color: var(--text-color-accent3);
+}
 
-  footer {
-    padding-top: 30px;
-  }
+.about__contact a:hover {
+  color: var(--text-color-accent2);
+  transition: 0.3s;
+}
+
+.about img {
+  height: 40vh;
+  border-radius: 50%;
+  animation: moveAndFadeIn 1s linear 0.5s both;
+}
+
+.technologies {
 }
