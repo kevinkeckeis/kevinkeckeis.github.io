@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600&display=swap');
 
 /* Set general rules   */
 :root {
@@ -25,34 +25,31 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
-
   height: 100vh;
   scroll-behavior: smooth;
   overflow-y: scroll;
   scroll-snap-type: y proximity;
+  padding: 0 20px;
+  border: #191a19 1px solid;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 /* Header */
 header {
+  scroll-snap-align: start;
+  background-color: white;
   grid-area: header;
-  position: absolute;
-  /* background-color: rgba(200, 200, 200, 0.5); */
+  position: sticky;
   width: 100%;
   top: 0px;
+  padding: 15px;
+  z-index: 1;
 }
 
-header nav {
-  padding: 10px;
-}
-
-header ol {
+header ul {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
 }
 
@@ -61,13 +58,11 @@ header li {
 }
 
 header a {
-  margin: 10px;
-  padding: 10px;
+  padding: 10px 5px;
 }
 
 a {
   color: var(--text-color-accent3);
-  opacity: 0.8;
   text-decoration: none;
 }
 
@@ -80,9 +75,11 @@ a:hover {
 }
 
 main {
-  grid-area: main;
-  padding: 0px 30px;
-  animation: moveAndFadeIn 1s linear 0.6s both;
+  display: grid;
+  grid-template-areas:
+    'about'
+    'technologies'
+    'projects';
 }
 
 footer {
@@ -107,11 +104,9 @@ h2 {
 .technologies,
 .projects {
   height: 100vh;
-  scroll-snap-align: center;
-  padding-top: 4rem;
+  animation: moveAndFadeIn 1s linear 0.6s both;
 }
 
-/* Article Contact */
 .contact {
   display: flex;
   flex-flow: row nowrap;
@@ -119,20 +114,25 @@ h2 {
 }
 
 .about {
+  grid-area: about;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: -50px;
+  scroll-snap-align: start;
 }
 
 .about__title {
-  padding-top: 5px;
   text-align: center;
 }
 
 .about__description {
   text-align: left;
-  padding-top: 20px;
+  margin-top: 15px;
+  padding: 0px 10px;
+  border-left: 1px solid var(--text-color-accent3);
+  border-right: 1px solid var(--text-color-accent3);
 }
 
 .about__contact {
@@ -152,10 +152,51 @@ h2 {
 }
 
 .about img {
-  height: 40vh;
+  height: 30vh;
   border-radius: 50%;
   animation: moveAndFadeIn 1s linear 0.5s both;
 }
 
 .technologies {
+  scroll-snap-align: start;
+  grid-area: technologies;
+  padding-top: 50px;
+}
+
+.projects {
+  scroll-snap-align: start;
+  grid-area: projects;
+  padding-top: 50px;
+}
+
+/* @media (min-width: 500px) {
+  .container {
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+      '. about .'
+      '. technologies . '
+      '. projects .';
+  }
+
+  header,
+  main,
+  footer {
+    width: 500px;
+  }
+} */
+
+@keyframes moveAndFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  40% {
+    opacity: 0.8;
+    transform: translateX(-3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
