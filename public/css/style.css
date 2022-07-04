@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600&display=swap");
+/* Set general rules   */
+:root {
+  /* https://colorhunt.co/palette/261c2c3e2c415c527f6e85b2 */
+  --bg-color: #ffffff;
+  --text-color: #191a19;
+  --text-color-accent1: #3e2c41;
+  --text-color-accent2: #5c527f;
+  --text-color-accent3: #6e85b2;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+  padding: 0 20px;
+}
+
+header {
+  scroll-snap-align: start;
+  background-color: white;
+  grid-area: header;
+  position: sticky;
+  width: 100%;
+  top: 0px;
+  padding: 10px;
+  z-index: 1;
+}
+header ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+header li {
+  display: inline;
+}
+header a {
+  padding: 10px 5px;
+  color: var(--text-color-accent3);
+  text-decoration: none;
+}
+header a:active {
+  color: var(--text-color-accent2);
+}
+header a:hover {
+  color: var(--text-color-accent2);
+}
+
+main {
+  display: grid;
+  grid-template-areas: "about" "technologies" "projects";
+}
+
+footer {
+  grid-area: footer;
+  animation: moveAndFadeIn 1s linear 0.75s both;
+}
+
+h1 {
+  padding-top: 10px;
+  font-size: 2rem;
+  color: var(--text-color-accent1);
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.about,
+.technologies,
+.projects {
+  height: 100vh;
+  animation: moveAndFadeIn 1s linear 0.6s both;
+}
+
+.contact {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.about {
+  grid-area: about;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -50px;
+  scroll-snap-align: start;
+}
+.about__title {
+  text-align: center;
+}
+.about__description {
+  text-align: left;
+  margin-top: 15px;
+  padding: 0px 10px;
+  border-left: 1px solid var(--text-color-accent3);
+  border-right: 1px solid var(--text-color-accent3);
+}
+.about__contact {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.about a {
+  padding: 20px;
+  font-size: 1.5rem;
+  color: var(--text-color-accent3);
+}
+.about a:hover {
+  color: var(--text-color-accent2);
+  transition: 0.3s;
+}
+.about img {
+  height: 30vh;
+  border-radius: 50%;
+  animation: moveAndFadeIn 1s linear 0.5s both;
+}
+
+.technologies {
+  scroll-snap-align: start;
+  grid-area: technologies;
+  padding-top: 50px;
+}
+
+.projects {
+  scroll-snap-align: start;
+  grid-area: projects;
+  padding-top: 50px;
+}
+
+/* @media (min-width: 500px) {
+  .container {
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+      '. about .'
+      '. technologies . '
+      '. projects .';
+  }
+
+  header,
+  main,
+  footer {
+    width: 500px;
+  }
+} */
+@keyframes moveAndFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  40% {
+    opacity: 0.8;
+    transform: translateX(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

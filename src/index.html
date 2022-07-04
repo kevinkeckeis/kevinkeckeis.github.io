@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kevin Keckeis</title>
+
+    <script
+      src="https://kit.fontawesome.com/df86504a90.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="about" id="about">
+          <div>
+            <img src="assets/kevin.jpg" alt="portrait" />
+          </div>
+          <h1>Kevin Keckeis</h1>
+          <p class="about__title">Developer</p>
+          <p class="about__description">
+            Hello, my name is Kevin Keckeis and I really enjoy to create. Lorem,
+            ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            incidunt mollitia vitae molestiae! Beatae maiores pariatur quae
+            molestiae repellat similique odit natus sequi consequatur, soluta
+            illo aliquid temporibus nihil fugiat.
+          </p>
+          <div class="about__contact">
+            <a
+              href="#"
+              id="message"
+              data-name="web"
+              data-domain="kevinkeckeis"
+              data-tld="at"
+              onclick="message(this.dataset.name, this.dataset.domain, this.dataset.tld)"
+              ><i class="fa-solid fa-at"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/kevinkeckeis" target="_blank">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/kevinkeckeis" target="_blank">
+              <i class="fa-brands fa-github-alt"></i>
+            </a>
+            <a href="https://www.facebook.com/kevinkeckeis" target="_blank">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </section>
+        <section class="technologies" id="technologies">
+          <h2>Technologies</h2>
+        </section>
+        <section class="projects" id="projects"><h2>Projects</h2></section>
+      </main>
+      <footer></footer>
+    </div>
+  </body>
+</html>
