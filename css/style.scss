@@ -1,4 +1,18 @@
+@use 'sass:map';
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600&display=swap');
+
+$breakpoints: (
+  small: 40em,
+  medium: 65em,
+  large: 90em,
+);
+
+@mixin mq($br) {
+  $size: map.get($breakpoints, $br);
+  @media (min-width: $size) {
+    @content;
+  }
+}
 
 :root {
   /* https://colorhunt.co/palette/261c2c3e2c415c527f6e85b2 */
@@ -29,6 +43,8 @@ body {
   overflow-y: scroll;
   scroll-snap-type: y proximity;
   padding: 0 20px;
+  @include mq(small) {
+  }
 }
 
 header {
