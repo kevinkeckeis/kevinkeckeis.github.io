@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600&display=swap");
 /* Set general rules   */
 :root {
   /* https://colorhunt.co/palette/261c2c3e2c415c527f6e85b2 */
@@ -17,7 +16,7 @@
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-size: 1rem;
@@ -28,7 +27,8 @@ body {
   height: 100vh;
   scroll-behavior: smooth;
   overflow-y: scroll;
-  scroll-snap-type: y proximity;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
   padding: 0 20px;
 }
 
@@ -36,43 +36,42 @@ header {
   scroll-snap-align: start;
   background-color: white;
   grid-area: header;
+  position: -webkit-sticky;
   position: sticky;
   width: 100%;
   top: 0px;
   padding: 10px;
   z-index: 1;
-  ul {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-  li {
-    display: inline;
-  }
-  a {
-    padding: 10px 5px;
-    color: var(--text-color-accent3);
-    text-decoration: none;
-  }
-  a:active {
-    color: var(--text-color-accent2);
-  }
-  a:hover {
-    color: var(--text-color-accent2);
-  }
+}
+header ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+header li {
+  display: inline;
+}
+header a {
+  padding: 10px 5px;
+  color: var(--text-color-accent3);
+  text-decoration: none;
+}
+header a:active {
+  color: var(--text-color-accent2);
+}
+header a:hover {
+  color: var(--text-color-accent2);
 }
 
 main {
   display: grid;
-  grid-template-areas:
-    'about'
-    'technologies'
-    'projects';
+  grid-template-areas: "about" "technologies" "projects";
 }
 
 footer {
   grid-area: footer;
-  animation: moveAndFadeIn 1s linear 0.75s both;
+  -webkit-animation: moveAndFadeIn 1s linear 0.75s both;
+          animation: moveAndFadeIn 1s linear 0.75s both;
 }
 
 h1 {
@@ -92,7 +91,8 @@ h2 {
 .technologies,
 .projects {
   height: 100vh;
-  animation: moveAndFadeIn 1s linear 0.6s both;
+  -webkit-animation: moveAndFadeIn 1s linear 0.6s both;
+          animation: moveAndFadeIn 1s linear 0.6s both;
 }
 
 .contact {
@@ -109,35 +109,36 @@ h2 {
   justify-content: center;
   margin-top: -50px;
   scroll-snap-align: start;
-  &__title {
-    text-align: center;
-  }
-  &__description {
-    text-align: left;
-    margin-top: 15px;
-    padding: 0px 10px;
-    border-left: 1px solid var(--text-color-accent3);
-    border-right: 1px solid var(--text-color-accent3);
-  }
-  &__contact {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-  }
-  a {
-    padding: 20px;
-    font-size: 1.5rem;
-    color: var(--text-color-accent3);
-  }
-  a:hover {
-    color: var(--text-color-accent2);
-    transition: 0.3s;
-  }
-  img {
-    height: 30vh;
-    border-radius: 50%;
-    animation: moveAndFadeIn 1s linear 0.5s both;
-  }
+}
+.about__title {
+  text-align: center;
+}
+.about__description {
+  text-align: left;
+  margin-top: 15px;
+  padding: 0px 10px;
+  border-left: 1px solid var(--text-color-accent3);
+  border-right: 1px solid var(--text-color-accent3);
+}
+.about__contact {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.about a {
+  padding: 20px;
+  font-size: 1.5rem;
+  color: var(--text-color-accent3);
+}
+.about a:hover {
+  color: var(--text-color-accent2);
+  transition: 0.3s;
+}
+.about img {
+  height: 30vh;
+  border-radius: 50%;
+  -webkit-animation: moveAndFadeIn 1s linear 0.5s both;
+          animation: moveAndFadeIn 1s linear 0.5s both;
 }
 
 .technologies {
@@ -167,7 +168,20 @@ h2 {
     width: 500px;
   }
 } */
-
+@-webkit-keyframes moveAndFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  40% {
+    opacity: 0.8;
+    transform: translateX(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 @keyframes moveAndFadeIn {
   0% {
     opacity: 0;
@@ -177,9 +191,8 @@ h2 {
     opacity: 0.8;
     transform: translateX(-3px);
   }
-
   100% {
     opacity: 1;
     transform: translateX(0px);
   }
-}
+}/*# sourceMappingURL=style.css.map */
