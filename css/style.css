@@ -141,13 +141,13 @@ header a:hover {
 main {
   margin-top: -40px;
   display: grid;
-  grid-template-areas: "profil" "about" "technologies" "projects" "footer";
+  grid-template-areas: "profil" "about" "skills" "projects" "footer";
 }
 @media (min-width: 800px) {
   main {
     grid-template-rows: 100vh -webkit-min-content -webkit-min-content -webkit-min-content;
     grid-template-rows: 100vh min-content min-content min-content;
-    grid-template-areas: "profil about" ". technologies" ". projects" ". footer";
+    grid-template-areas: "profil about" ". skills" ". projects" ". footer";
     -moz-column-gap: 50px;
          column-gap: 50px;
   }
@@ -216,13 +216,13 @@ h2 {
   scroll-snap-align: start;
 }
 
-.technologies {
-  grid-area: technologies;
+.skills {
+  grid-area: skills;
   scroll-snap-align: start;
   padding-top: 20vh;
 }
 @media (min-width: 800px) {
-  .technologies {
+  .skills {
     min-height: 100vh;
     padding-top: 10vh;
     display: flex;
@@ -230,28 +230,28 @@ h2 {
     justify-content: center;
   }
 }
-.technologies ul {
+.skills ul {
   margin-top: 40px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.technologies li {
+.skills li {
   display: flex;
   flex: 1 1 100%;
   flex-flow: column nowrap;
   text-align: center;
 }
-.technologies li img {
+.skills li img {
   -o-object-fit: contain;
      object-fit: contain;
   height: 30px;
   filter: grayscale(100%);
 }
-.technologies li img:hover {
+.skills li img:hover {
   filter: grayscale(50%);
 }
-.technologies .green:hover {
+.skills .green:hover {
   filter: invert(23%) sepia(100%) saturate(1279%) hue-rotate(90deg) brightness(96%) contrast(102%);
 }
 
@@ -271,31 +271,42 @@ h2 {
 }
 .projects ul {
   padding-top: 10px;
-  padding-inline: 20px;
 }
 .projects li {
+  padding-inline: 20px;
   padding-block: 30px;
   list-style: none;
 }
 .projects__head {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
   color: var(--text-color-accent3);
 }
 .projects__title {
   font-size: 1.1rem;
+  text-decoration: underline;
 }
 .projects__typ {
   font-weight: 300;
+  text-align: right;
 }
-.projects__date {
-  font-weight: 300;
+.projects__source {
+  display: flex;
+  position: relative;
+}
+.projects img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 20px;
+  filter: grayscale(100%);
 }
 .projects p {
   color: var(--text-color);
 }
 .projects a {
-  color: var(--text-color);
+  padding-block: 5px;
+  color: var(--text-color-accent3);
   text-decoration: none;
 }
 .projects a:hover {
