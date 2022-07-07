@@ -166,7 +166,7 @@ main {
   grid-template-areas:
     'profil'
     'about'
-    'technologies'
+    'skills'
     'projects'
     'footer';
 
@@ -174,7 +174,7 @@ main {
     grid-template-rows: 100vh min-content min-content min-content;
     grid-template-areas:
       'profil about'
-      '. technologies'
+      '. skills'
       '. projects'
       '. footer';
     column-gap: 50px;
@@ -240,8 +240,8 @@ h2 {
   scroll-snap-align: start;
 }
 
-.technologies {
-  @include slide(technologies);
+.skills {
+  @include slide(skills);
 
   ul {
     margin-top: 40px;
@@ -275,10 +275,10 @@ h2 {
 
   ul {
     padding-top: 10px;
-    padding-inline: 20px;
   }
 
   li {
+    padding-inline: 20px;
     padding-block: 30px;
     list-style: none;
   }
@@ -286,24 +286,33 @@ h2 {
   &__head {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
     color: var(--text-color-accent3);
   }
   &__title {
     font-size: 1.1rem;
+    text-decoration: underline;
   }
   &__typ {
     font-weight: 300;
+    text-align: right;
   }
-  &__date {
-    font-weight: 300;
+  &__source {
+    display: flex;
+    position: relative;
   }
-
+  img {
+    object-fit: contain;
+    height: 20px;
+    filter: grayscale(100%);
+  }
   p {
     color: var(--text-color);
   }
 
   a {
-    color: var(--text-color);
+    padding-block: 5px;
+    color: var(--text-color-accent3);
     text-decoration: none;
   }
 
